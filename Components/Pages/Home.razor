@@ -1,0 +1,32 @@
+﻿@page "/"
+
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<AuthorizeView Roles="Admin">
+    <h1>You Are Admin</h1>
+</AuthorizeView>
+
+<AuthorizeView Roles="User">
+    <h1>You Are User</h1>
+</AuthorizeView>
+
+<AuthorizeView>
+    <Authorized>
+        <h1>You Are Authentication</h1>
+
+        <ul>
+            <li>ID : @context.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)!.Value;</li>
+            <li>NAME : @context.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.GivenName)!.Value;</li>
+            <li>EMAIL: @context.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)!.Value;</li>
+            <li>ROLE: @context.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)!.Value;</li>
+        </ul>
+    </Authorized>
+    <NotAuthorized>
+        <h1>You Are Not Authenticated</h1>
+    </NotAuthorized>
+</AuthorizeView>

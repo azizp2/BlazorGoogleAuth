@@ -1,0 +1,38 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code
+.vscode/
+
+# ASP.NET secrets
+secrets.json
+
+# Environment files
+.env
+.env.*
+
+# Configuration
+appsettings.Development.json
+appsettings.Local.json
+appsettings.json
+
+# Logs
+*.log
+
+# Node modules (if using npm in project)
+node_modules/
+
+# Publish outputs
+wwwroot/dist/
+publish/
+
+# OS-specific
+.DS_Store
+Thumbs.db
